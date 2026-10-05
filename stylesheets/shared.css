@@ -1,0 +1,73 @@
+/* Shared portfolio / studio foundations. Loaded after page styles. */
+:root {
+  --bg: #fbfaf6;
+  --bg-pure: #fbfaf6;
+  --fg: #272923;
+  --fg-soft: #373a32;
+  --muted: #66695f;
+  --muted-light: #71756b;
+  --border: #d9dcd2;
+  --border-soft: #e1e3da;
+  --link: #536748;
+  --link-hover: #34492b;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --container-width: 1040px;
+}
+body { background: var(--bg); color: var(--fg); }
+a { color: var(--link); text-underline-offset: .2em; }
+a:hover { color: var(--link-hover); }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 5px; }
+.site-header {
+  width: min(1040px, calc(100% - 72px));
+  max-width: none;
+  margin: 0 auto;
+  padding: 30px 0 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-header .site-name {
+  color: var(--fg);
+  font: 500 19px/1.3 var(--font-serif);
+  letter-spacing: -.025em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-header .site-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+}
+.site-header .site-links a {
+  color: var(--muted);
+  font: 500 10px/1.5 var(--font-sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 6px 0;
+}
+.site-header .site-links a:hover,
+.site-header .site-links a[aria-current] { color: var(--link); text-decoration: underline; text-underline-offset: 6px; }
+.studio-page main { width: min(1040px, calc(100% - 72px)); max-width: none; padding: 0; }
+.studio-page .intro { padding: 28px 0 64px; }
+.studio-page h1 { font: 400 clamp(44px, 6vw,72px)/1.1 var(--font-serif); letter-spacing: -.04em; margin: 15px 0 22px; }
+.studio-page .intro>p:not(.eyebrow):not(.preview-note) { font-size: 24px; line-height: 1.45; }
+.studio-page .eyebrow,
+.studio-page .chapter { color: var(--muted); font-family: var(--font-sans); }
+.studio-page .chapter,
+.studio-page footer { border-color: var(--border); }
+.studio-page figcaption { color: var(--fg); font: 16px/1.55 var(--font-serif); }
+.studio-page .type,
+.studio-page .preview-note { color: var(--muted); font-family: var(--font-sans); }
+.studio-page footer { color: var(--muted); }
+@media (max-width: 720px) {
+  .site-header { width: calc(100% - 40px); padding: 24px 0 32px; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .site-header .site-links { gap: 8px 20px; }
+  .studio-page main,
+  body > main.container { width: calc(100% - 40px); }
+  .studio-page .intro { padding: 18px 0 44px; }
+  .studio-page .intro>p:not(.eyebrow):not(.preview-note) { font-size: 21px; }
+}
