@@ -4581,7 +4581,7 @@ html.postcard-viewer-open { overflow: hidden; }
 .gallery-carousel-dots { position: absolute; z-index: 1; bottom: 6px; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; gap: 0; margin: 0; padding: 0; background: transparent; }
 .gallery-carousel-dots[hidden] { display: none; }
 .gallery-carousel-dots button {
-  display: grid; place-items: center; width: 14px; height: 28px;
+  display: grid; place-items: center; width: 28px; height: 28px;
   padding: 0; border: 0; background: transparent; cursor: pointer; color: #fff;
 }
 .gallery-carousel-dots button::before {
@@ -4589,3 +4589,11 @@ html.postcard-viewer-open { overflow: hidden; }
 }
 .gallery-carousel-dots button[aria-pressed="true"]::before { opacity: 1; }
 .gallery-carousel-dots button:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
+
+/* Context for the teaching appointments. */
+.teaching-note {
+  max-width: none;
+  margin: -8px 0 28px;
+  color: var(--muted);
+  font: 14px/1.6 var(--font-serif);
+}
