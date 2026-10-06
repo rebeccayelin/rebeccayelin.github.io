@@ -1,5 +1,5 @@
 import * as THREE from './three-0.169.0.mjs';
-import { parts } from './parts.js';
+import { parts } from './parts.js?v=e6ff734bc41a';
 
 const root = document.querySelector('#tide-viewer');
 const stage = root.querySelector('.model-stage');
