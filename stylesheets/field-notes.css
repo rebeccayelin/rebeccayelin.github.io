@@ -1,0 +1,111 @@
+/* Original Field Notes classes, adapted to the current public shell. */
+.blog-page { --copy-measure: 544px; --copy-size: 17px; --copy-leading: 1.7; --supporting-size: 14px; --dated-list-width: 720px; --content-group-gap: 3rem; }
+.blog-page .blog-shell { width: min(1040px, calc(100% - 72px)); }
+.blog-page .blog-card-preview { max-width: 300px; border: 0; }
+.blog-page .blog-card-preview img { height: auto; }
+.blog-page .blog-post-header { background: none; border: 0; }
+.blog-page .blog-back { margin-bottom: 2.5rem; }
+.blog-page .blog-post-header { margin-bottom: 2.5rem; }
+.tide-photo { max-width: var(--text-measure); margin: 2rem 0 3rem; }
+.tide-photo img { display: block; width: 100%; height: auto; max-height: none; }
+.tide-photo figcaption, .assembly-figure figcaption { max-width: 600px; margin-top: .8rem; color: var(--muted); font: 12px/1.6 var(--font-sans); }
+.assembly-figure { max-width: var(--text-measure); margin: 2rem 0 3rem; padding: 1.4rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.model-toolbar { width: 100%; }
+.model-toolbar label { display:flex; justify-content:space-between; font: 500 13px/1.5 var(--font-sans); }
+.model-toolbar input { display:block; width:100%; margin: .7rem 0 .2rem; min-height: 28px; accent-color:var(--link); }
+.range-ends { display:flex; justify-content:space-between; color:var(--muted); font: 11px/1.5 var(--font-sans); }
+.model-stage { height: 360px; width:100%; position:relative; touch-action:pan-y; cursor:grab; }
+.model-stage:active { cursor:grabbing; }
+.model-stage:focus-visible { outline:2px solid var(--link); outline-offset:3px; }
+.model-stage canvas { display:block; width:100%; height:100%; }
+.model-loading { padding: 3rem 1rem; font-size:15px; }
+.model-options { display:flex; flex-wrap:wrap; justify-content:space-between; gap: 1rem; align-items:center; padding:.75rem 0; border-bottom:1px solid var(--border); font:13px/1.5 var(--font-sans); }
+.model-toggles { display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; align-items:center; }
+.model-options label { display:flex; gap:.5rem; align-items:center; min-height:44px; }
+.model-options input { accent-color:var(--link); width:16px; height:16px; margin:0; flex-shrink:0; }
+.model-options button { background:transparent; color:var(--link); border:1px solid var(--border); padding:.6rem 1rem; min-height:44px; font:inherit; cursor:pointer; }
+.model-options button:focus-visible { outline:2px solid var(--link); outline-offset:3px; }
+.model-legend { display:flex; flex-wrap:wrap; gap:.5rem 1.3rem; margin:1rem 0 .5rem; font:11px/1.5 var(--font-sans); }
+.model-legend span { display:flex; gap:.45rem; align-items:center; }
+.swatch { width:9px; height:9px; display:inline-block; }
+.wood { background:#b58a60; }.rib { background:#b58a60; }.deck { background:#b58a60; }.led { background:#d3a544; }
+.blog-prose #model-help { margin:0; color:var(--muted); font:12px/1.6 var(--font-sans); }
+.fit-table { max-width:720px; margin:1.5rem 0; }
+.fit-table table { border-collapse:collapse; width:100%; font:14px/1.6 var(--font-sans); }
+.fit-table caption { text-align:left; font-size:12px; color:var(--muted); margin-bottom:.7rem; }
+.fit-table th,.fit-table td { text-align:left; padding:.7rem .8rem .7rem 0; vertical-align:top; border-bottom:1px solid var(--border); }
+.fit-table th { font-weight:500; }
+.fit-table th:first-child { width:43%; }
+.assembly-steps { padding-left:1.4rem; }
+.assembly-steps li { padding-left:.3rem; margin-bottom:1.3rem; }
+.download-list span { display:block; font:12px/1.6 var(--font-sans); color:var(--muted); }
+.notes-footer { width:min(1040px,calc(100% - 72px)); margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:1rem; padding:2rem 0 3rem; border-top:1px solid var(--border); font:12px/1.6 var(--font-sans); }
+.skip-link { position:absolute; left:20px; top:-80px; padding:8px; background:var(--bg); z-index:100; }
+.skip-link:focus { top:10px; }
+@media(max-width:720px) { .blog-page .blog-shell,.notes-footer { width:calc(100% - 40px); } .model-stage { height:350px; } }
+@media(max-width:450px) { .blog-card { grid-template-columns:1fr; gap:.5rem; } .model-stage { height:300px; } .fit-table table { font-size:12px; } }
+
+.model-legend .acrylic { background:#8cabb4; }
+.model-legend .battery { background:#555b56; }
+
+@media(max-width:450px) { .model-toggles { flex-direction:column; align-items:flex-start; gap:0; } .model-options { align-items:center; } }
+
+.tide-photo-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; align-items:start; }
+.tide-photo-grid a { display:block; min-width:0; }
+@media(max-width:450px) { .tide-photo-grid { gap:6px; } }
+
+.tide-photo-grid .tide-detail-crop { aspect-ratio:2 / 3; object-fit:cover; object-position:center; }
+
+.cut-file-previews { max-width:var(--text-measure); margin:1.5rem 0 2rem; }
+.cut-file-group { padding:0; margin:0 0 2rem; }
+.cut-file-heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.75rem; margin-bottom:1rem; }
+.blog-prose .cut-file-heading h3 { margin:0 0 .2rem; font-size:18px; }
+.blog-prose .cut-file-heading p { margin:0; font:12px/1.5 var(--font-sans); color:var(--muted); }
+.cut-file-heading > a { font:12px/1.5 var(--font-sans); padding:.5rem 0; white-space:nowrap; }
+.acrylic-cut-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.acrylic-cut-grid figure { min-width:0; margin:0; }
+.acrylic-cut-grid a,.plywood-cut-preview { display:block; border:1px solid var(--border); background:#fff; }
+.cut-file-previews img { display:block; width:100%; height:auto; }
+.acrylic-cut-grid figcaption { margin:.5rem 0 0; color:var(--muted); font:11px/1.5 var(--font-sans); letter-spacing:0; }
+@media(max-width:450px) { .acrylic-cut-grid { gap:6px; } }
+
+/* Separate sections with whitespace rather than horizontal rules. */
+.tide-page .assembly-figure,
+.tide-page .model-options,
+.tide-page .notes-footer { border-top:0; border-bottom:0; }
+.tide-page .notes-footer::before { display:none; }
+.tide-page hr { display:none; }
+
+/* Compact controls and legend, with Reset centered alongside both rows. */
+.model-settings { min-width:0; display:grid; gap:2px; }
+.model-settings .model-legend { margin:0; gap:.4rem 1.1rem; }
+.model-options { flex-wrap:nowrap; gap:1rem; padding:.5rem 0; }
+.model-options button { flex-shrink:0; }
+@media (pointer:fine) { .model-settings .model-toggles label { min-height:30px; } }
+@media(max-width:450px) { .model-settings .model-legend { gap:.35rem .7rem; } }
+
+/* Keep controls distinct while tightening the assembly section's rhythm. */
+.model-toolbar input { margin:0; }
+.model-options { padding:.25rem 0; }
+.model-legend { margin:.5rem 0 0; }
+.tide-page .assembly-figure { padding-bottom:0; margin-bottom:1.5rem; }
+
+/* Unbulleted notes, including the nested clearance lines. */
+.tide-page .blog-prose ul { list-style:none; padding-left:0; }
+.tide-page .blog-prose > ul > li { padding-left:0; }
+.tide-page .blog-prose > ul > li::before { content:none; }
+.tide-page .blog-prose li > ul { margin:.35rem 0 0; }
+
+/* Draw checkbox borders at the control edge, without native visual insets. */
+.model-options input[type="checkbox"] { appearance:none; -webkit-appearance:none; box-sizing:border-box; display:grid; place-content:center; padding:0; margin:0; border:1px solid var(--muted); border-radius:2px; background:transparent; }
+.model-options input[type="checkbox"]:checked { background:var(--link); border-color:var(--link); }
+.model-options input[type="checkbox"]:checked::after { content:""; width:4px; height:8px; border:solid white; border-width:0 2px 2px 0; transform:translateY(-1px) rotate(45deg); }
+.model-options input[type="checkbox"]:focus-visible { outline:2px solid var(--link); outline-offset:3px; }
+@media (forced-colors:active) { .model-options input[type="checkbox"]:checked { background:Highlight; } .model-options input[type="checkbox"]:checked::after { border-color:HighlightText; } }
+
+/* Keep the legend close to the checkboxes and level with the button bottom. */
+.tide-page .model-options { align-items:flex-end; }
+.tide-page .model-settings { gap:6px; }
+.tide-page .model-toggles { align-items:flex-start; }
+.tide-page .model-options label { align-items:center; }
+.tide-page .model-options input[type="checkbox"] { margin:0; }
