@@ -109,3 +109,7 @@
 .tide-page .model-toggles { align-items:flex-start; }
 .tide-page .model-options label { align-items:center; }
 .tide-page .model-options input[type="checkbox"] { margin:0; }
+
+.cut-file-downloads { display:flex; flex-direction:column; align-items:flex-end; gap:.25rem; }
+.cut-file-downloads a { font:12px/1.5 var(--font-sans); white-space:nowrap; }
+@media(max-width:450px) { .cut-file-downloads { margin-left:auto; } }
