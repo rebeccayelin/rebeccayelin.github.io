@@ -4597,3 +4597,6 @@ html.postcard-viewer-open { overflow: hidden; }
   color: var(--muted);
   font: 14px/1.6 var(--font-serif);
 }
+
+/* Square card crop: retain the dress form and the full spread of the skirt. */
+.gallery-image-wrapper img.textile-studies-photo { aspect-ratio: 1; height: auto; object-fit: cover; object-position: 50% 50%; }
