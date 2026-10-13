@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!-- Public Field Note. Edit this static page directly. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="How should a single string travel through the tubes so that they connect as intended?" />
+    <meta name="theme-color" content="#fafaf9" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="From String to Structure — Rebecca Y. E. Lin" />
+    <meta property="og:description" content="How should a single string travel through the tubes so that they connect as intended?" />
+    <meta property="og:url" content="https://rebeccayelin.github.io/field-notes/threading/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="From String to Structure — Rebecca Y. E. Lin" />
+    <meta name="twitter:description" content="How should a single string travel through the tubes so that they connect as intended?" />
+    <link rel="canonical" href="https://rebeccayelin.github.io/field-notes/threading/" />
+    <title>From String to Structure — Rebecca Y. E. Lin</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../stylesheets/main.css?v=9cfd04a05551" />
+    <link rel="stylesheet" href="../../stylesheets/blog.css?v=9cfd04a05551" />
+  <link rel="stylesheet" href="../../stylesheets/shared.css">
+<link rel="stylesheet" href="../../stylesheets/field-notes.css">
+</head>
+  <body class="blog-page blog-post-page" id="top">
+    <header class="site-header"><a class="site-name" href="../../">Rebecca Y. E. Lin</a><nav class="site-links" aria-label="Main navigation"><a href="../../#research">Systems</a><a href="../../#gallery">Artifacts</a><a href="../../#teaching">Teaching</a><a href="../../#news">Living Logs</a><a href="../" aria-current="location">Field Notes</a></nav></header>
+    <main class="container blog-shell">
+      <article class="blog-post">
+        <header class="blog-post-header">
+          <a class="blog-back" href="../index.html">← All notes</a>
+          <h1>From String to Structure</h1>
+          <p class="blog-dek">How should a single string travel through the tubes so that they connect as intended?</p>
+          <div class="blog-post-meta">
+            <time datetime="2024-01">January 2024</time>
+            <span>2 min</span>
+          </div>
+          <ul class="blog-tags" aria-label="Topics"><li>Graph Algorithms</li><li>Craft</li></ul>
+        </header>
+        <div class="blog-prose">
+          <p>Thread string through tubes appears in beadwork, straw mobiles such as <em>himmeli</em>, and push puppets. I became interested in it when Zhecheng Wang sent me a video of Alison Martin&#39;s deployable bamboo sculpture.</p>
+<div class="blog-social-pair">
+<div class="blog-social-embed">
+<blockquote class="twitter-tweet" data-conversation="none" data-align="center" data-width="550" data-dnt="true">
+  <a href="https://twitter.com/alisonmartin57/status/1461643652946698240">Watch Alison Martin's deployable structure.</a>
+</blockquote>
+</div>
+<div class="blog-social-embed">
+<blockquote class="twitter-tweet" data-conversation="none" data-align="center" data-width="550" data-dnt="true">
+  <a href="https://twitter.com/rebeccayelin/status/1749193197031469102">Watch the prototype I developed with Tomohiro Tachi.</a>
+</blockquote>
+</div>
+</div><p><strong>How should a single string travel through the tubes so that they connect as intended?</strong></p>
+<div class="blog-social-embed blog-social-single">
+<div class="blog-social-slot">
+<blockquote class="twitter-tweet" data-conversation="none" data-align="center" data-width="550" data-dnt="true">
+  <a href="https://twitter.com/alisonmartin57/status/1459144141028433925">Watch Alison Martin deploy a tetrahedron by pulling a string.</a>
+</blockquote>
+</div>
+</div>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>We model tubes as graph edges, junctions as vertices, and the string as a closed walk. Visiting every tube is only part of the problem: the string must also connect all the tubes at each junction. We capture this with a small “junction graph” recording which tubes the string connects.</p>
+<p>The key step is another change of representation. Instead of searching directly over routes, we describe how many times each tube is traversed, subject to local constraints. We prove that valid counts can be turned into one continuous threading. This reformulation lets us reduce minimum-length threading to minimum-weight perfect matching, giving a polynomial-time algorithm. I developed this work with Erik D. Demaine and Yael Kirkpatrick; we presented it at ITCS 2024.</p>
+<figure class="blog-slide-viewer" data-slide-viewer data-slide-count="73" data-slide-start="10" data-slide-base="./assets/slides/slide-" tabindex="0" aria-label="Graph Threading — ITCS 2024 slides">
+  <img data-slide-image src="./assets/slides/slide-10.webp" width="1440" height="810" loading="lazy" alt="Graph Threading presentation, slide 10 of 73" />
+  <div class="blog-slide-controls" data-slide-controls hidden>
+    <button type="button" data-slide-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="14 6 8 12 14 18" /></svg></button>
+    <span data-slide-counter aria-live="polite" aria-atomic="true">10 / 73</span>
+    <button type="button" data-slide-next aria-label="Next slide"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 6 16 12 10 18" /></svg></button>
+  </div>
+  <figcaption>Graph Threading · ITCS 2024 · <a href="./assets/slides/graph-threading-itcs2024.pdf">Open PDF</a> · <a href="https://www.youtube.com/watch?v=EJLky_q_UYE" target="_blank" rel="noopener">Watch talk (14:42) ↗</a></figcaption>
+</figure><p>Building prototypes gave us the next question: after just a few turns, the string could become difficult to pull tight. Minimizing length saves material, but smooth deployment also depends on how much the string bends along its route. This led to <a href="https://arxiv.org/abs/2405.17953"><em>Graph Threading with Turn Costs</em></a>, where we minimize the total turning angle to account for friction. A practical difficulty became a new theoretical problem. In <a href="https://rebeccayelin.github.io/routing-reconfigurations/"><em>Routing Reconfigurations</em></a>, we explored another direction: embedding multiple routes so one structure can take on several predetermined configurations.</p>
+<p>I enjoy this movement and synergy between making and theory. A craft mechanism can suggest a fun mathematical question; a useful representation can connect it to existing tools and give us traction. </p>
+<h2>Links</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2309.10122">Graph Threading (ITCS 2024)</a></li>
+<li><a href="https://arxiv.org/abs/2405.17953">Graph Threading with Turn Costs (arXiv)</a></li>
+<li><a href="https://rebeccayelin.github.io/routing-reconfigurations/">Routing Reconfigurations (SCF 2024 Demo)</a></li>
+</ul>
+        </div>
+        <div class="blog-post-footer">
+          <a href="#top">↑ Back to top</a>
+        </div>
+      </article>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+
+    <nav class="footer-social" aria-label="Social media links">
+
+            <a href="https://www.linkedin.com/in/rebeccayelin/" target="_blank" rel="noopener" title="LinkedIn">
+              <svg class="icon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm244.8 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" /></svg>
+              <span class="sr-only">LinkedIn</span>
+            </a>
+
+            <a href="https://instagram.com/rebeccayelin" target="_blank" rel="noopener" title="Instagram">
+              <svg class="icon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" /></svg>
+              <span class="sr-only">Instagram</span>
+            </a>
+
+            <a href="https://x.com/rebeccayelin" target="_blank" rel="noopener" title="X (Twitter)">
+              <svg class="icon" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" /></svg>
+              <span class="sr-only">X (Twitter)</span>
+            </a>
+
+            <a href="https://youtube.com/@rebeccayelin" target="_blank" rel="noopener" title="YouTube">
+              <svg class="icon" viewBox="0 0 576 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" /></svg>
+              <span class="sr-only">YouTube</span>
+            </a>
+
+            <a href="https://scholar.google.com/citations?hl=en&amp;user=v7iwWi8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener" title="Google Scholar">
+              <svg class="icon" viewBox="0 0 640 512" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><path d="M320 32L0 160l320 128 256-102.4V416h64V160zM128 268.8V384c0 35.3 86 96 192 96s192-60.7 192-96V268.8L320 345.6z" /></svg>
+              <span class="sr-only">Google Scholar</span>
+            </a>
+
+    </nav>
+
+      </div>
+    </footer>
+
+    <script src="./assets/slides.js"></script>
+  </body>
+</html>
