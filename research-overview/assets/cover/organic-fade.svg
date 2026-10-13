@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+ <defs>
+  <filter id="soft-contour" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+   <feTurbulence type="fractalNoise" baseFrequency=".003 .005" numOctaves="2" seed="8" result="grain"/>
+   <feDisplacementMap in="SourceGraphic" in2="grain" scale="90" xChannelSelector="R" yChannelSelector="G"/>
+   <feGaussianBlur stdDeviation="72"/>
+  </filter>
+ </defs>
+ <path d="M 590,-450 C 560,-160 660,-30 740,120 C 810,260 1020,320 1030,480 C 1045,660 920,755 965,875 C 995,965 1090,1040 1145,1140 C 1180,1210 1200,1300 1230,1400 L 1270,1550 L 2500,1550 L 2500,-450 Z" fill="white" filter="url(#soft-contour)"/>
+</svg>

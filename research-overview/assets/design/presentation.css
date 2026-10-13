@@ -1,0 +1,41 @@
+/* Presentation language v1. Scoped rollout: Constellations only. */
+.slide[data-design="constellations"]{
+ --ink:#172b2d;--context:#91a19f;--patch:#b86d46;--focus:#a32d66;--muted-text:#687572;
+ --title-face:'EB Garamond',serif;--label-face:'DM Sans',sans-serif;
+ --draw:1800ms;--fade:1200ms;--reveal:800ms;--marker:650ms;--loop-return:3000ms;
+ --motion-ease:cubic-bezier(.4,0,.2,1);color:var(--ink);
+}
+[data-design="constellations"] .explore-title{top:80px;left:112px;right:112px}
+[data-design="constellations"] .explore-title h2{font:400 60px/1.1 var(--title-face);letter-spacing:-.5px;color:var(--ink)}
+[data-design="constellations"] :is(.yearning-section-title,.art-record h2){color:var(--ink)}
+[data-design="constellations"] :is(.bottom,.pipeline-steps,.radial-label,.refinement-row>span){font-family:var(--label-face)}
+[data-design="constellations"] .bottom{color:var(--ink)}
+[data-design="constellations"] :is(.art-medium,.art-subtitle,.art-credits h3,.art-credits em,.art-credits .exhibition-link p){color:var(--muted-text)}
+[data-design="constellations"] .pipeline-steps{color:var(--muted-text)}
+[data-design="constellations"] .atlas-cell{border-color:var(--context)}
+[data-design="constellations"] .atlas-cell.classical-example{border-color:var(--focus)}
+/* Native SVG widths stay in native coordinates: never apply a global px width. */
+[data-design="constellations"].historical-figure [id$="-pattern"]>*{transition-duration:var(--draw)!important;transition-timing-function:var(--motion-ease)!important}
+[data-design="constellations"].historical-figure :is(#figure2-a-pattern,#figure2-b-pattern,#figure2-a-construction,#figure2-b-construction){transition-duration:var(--draw)!important;transition-timing-function:var(--motion-ease)!important}
+[data-design="constellations"].historical-figure :is(.panel-c,.panel-d,.border-c,.border-d){transition-duration:var(--reveal);transition-timing-function:var(--motion-ease)}
+[data-design="constellations"] .feature-highlight{transition:opacity var(--marker) var(--motion-ease)}
+[data-design="constellations"] :is(.atlas-subdivision-trace,.atlas-circle-draw,.atlas-motif-draw){transition-duration:var(--draw);transition-timing-function:var(--motion-ease)}
+[data-design="constellations"] .atlas-detail{transition-duration:var(--reveal);transition-timing-function:var(--motion-ease)}
+[data-design="constellations"] .contact-node{transition:opacity var(--marker) var(--motion-ease)}
+[data-design="constellations"] .detail-context{transition:opacity var(--fade) var(--motion-ease)}
+[data-design="constellations"] .pipeline-art g{transition-duration:var(--fade);transition-timing-function:var(--motion-ease)}
+[data-design="constellations"].pipeline-slide.visible .pipeline-graph path{animation-duration:var(--draw)}
+[data-design="constellations"].radial-exploration :is(.radial-layer-packing circle,.radial-layer-motif path){animation-timing-function:var(--motion-ease)}
+/* Reset only when invisible; retain the gentle, fully drawn return state. */
+[data-design="constellations"].uniform-layered[data-explore="0"] :is(.atlas-subdivision-trace,.atlas-circle-draw,.atlas-motif-draw){transition:none}
+[data-design="constellations"].uniform-layered[data-explore="4"] .atlas-detail{transition:none}
+@media(prefers-reduced-motion:reduce){
+ .slide[data-design="constellations"] *{animation-duration:1ms!important;animation-delay:0ms!important;transition-duration:0ms!important;transition-delay:0ms!important}
+}
+/* Reserve the same footer clearance as image and procedure slides. */
+[data-design="constellations"] .pipeline-art{width:1142.86px;height:800px;left:388.57px;top:120px}
+
+/* Stable SVG fade layers; never apply compositing hints to individual paths. */
+[data-design="constellations"] :is(.detail-context,.pipeline-graph,.pipeline-packing,.pipeline-patch,.pipeline-motif,.atlas-cell>svg,.radial-layer-graph,.radial-layer-packing,.radial-layer-motif,.refine-final-packing,.refine-final-pattern){will-change:opacity}
+/* Shared 1.6px frame at the native 1920px slide size. */
+[data-design="constellations"] .atlas-cell,[data-design="constellations"].one-uniform .atlas-cell.classical-example{border-width:1.6px}
