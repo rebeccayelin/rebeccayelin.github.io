@@ -1,1 +1,5 @@
 .DS_Store
+
+# Keep Tide engraving artwork out of the public repository.
+/field-notes/tide/assets/*acrylic*.pdf
+/field-notes/tide/assets/acrylic-*-preview.svg
